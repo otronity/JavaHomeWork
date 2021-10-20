@@ -7,9 +7,9 @@ public class Calculator {
 
         Scanner in = new Scanner(System.in);
 
-        int operand1 = 0;
-        int operand2 = 0;
-        int operand3 = 0;
+        double operand1 = 0;
+        double operand2 = 0;
+        double operand3 = 0;
         String sign;
 
         System.out.print("Введите первое число:");

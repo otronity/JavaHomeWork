@@ -9,7 +9,8 @@ public class Bingo {
         Random random = new Random();
         //Загадываем число
         int x = random.nextInt(101);
-        System.out.println( x);
+        //вывод загаданного числа для теста
+        // System.out.println( x);
 
         int y, tryCnt;
         boolean result = false;

@@ -18,16 +18,16 @@ public class BubbleMethod {
         sumElements = 0;
         sumElementsPositiv = 0;
 
-        System.out.print("Массив: {");
+        System.out.print("\nВведенный массив: {");
         for (int i = 0; i < array.length; i++){
             System.out.print(" " + array[i]);
             sumElements = sumElements + array[i];
             if (array[i] > 0) {sumElementsPositiv = sumElementsPositiv + array[i];}
         }
-        System.out.println(" }");
+        System.out.println(" }\n");
 
-        System.out.println("Сумма всех єлементов массива = " + sumElements);
-        System.out.println("Сумма всех положительных єлементов массива = " + sumElementsPositiv);
+        System.out.println("Сумма всех элементов массива = " + sumElements);
+        System.out.println("Сумма всех положительных элементов массива = " + sumElementsPositiv);
         //сортируем
         while (!result) {
             cntPodmen = 0;
@@ -45,10 +45,10 @@ public class BubbleMethod {
 
         }
 
-        System.out.print("\n Отсортированный массив: {");
+        System.out.print("Отсортированный массив: {");
             for (int i = 0; i < array.length; i++){
             System.out.print(" " + array[i]);
         }
-        System.out.print(" }");
+        System.out.print(" }\n");
     }
 }

@@ -8,8 +8,7 @@ public class Anagram {
     static int num (String charecter, String phrase){
         int count = 0;
         for (int i = 0; i < phrase.length(); i++){
-             String phraseLC = phrase.toLowerCase();
-             if (phraseLC.substring(i,i+1).equals(charecter)) count++;
+             if (phrase.substring(i,i+1).equals(charecter)) count++;
         }
         return count;
     }

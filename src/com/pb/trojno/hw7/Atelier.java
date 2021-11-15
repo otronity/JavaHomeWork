@@ -18,22 +18,7 @@ public class Atelier {
         System.out.println("Мужская одежда: ");
         for (Clothes c: clothes) {
             if (c instanceof ManClothes) {
-                if (c instanceof Tshirt) {
-                    System.out.println("футболка: цвет " + ((Tshirt) c).getColor() +
-                            ",размер " + ((Tshirt) c).getSize() + ", цена " + ((Tshirt) c).getPrice());
-                }
-                if (c instanceof Pants) {
-                    System.out.println("джинсы: цвет " + ((Pants) c).getColor() +
-                            ",размер " + ((Pants) c).getSize() + ", цена " + ((Pants) c).getPrice());
-                }
-                if (c instanceof Skirt) {
-                    System.out.println("юбка: цвет " + ((Skirt) c).getColor() +
-                            ",размер " + ((Skirt) c).getSize() + ", цена " + ((Skirt) c).getPrice());
-                }
-                if (c instanceof Tie) {
-                    System.out.println("галстук: цвет " + ((Tie) c).getColor() +
-                            ",размер " + ((Tie) c).getSize() + ", цена " + ((Tie) c).getPrice());
-                }
+                ((ManClothes) c).dressMan();
             }
         }
     }
@@ -41,23 +26,8 @@ public class Atelier {
     public static void dressWomen(Clothes[] clothes){
         System.out.println("Женская одежда: ");
         for (Clothes c: clothes) {
-            if (c instanceof WomenClothes) {
-                if (c instanceof Tshirt) {
-                    System.out.println("футболка: цвет " + ((Tshirt) c).getColor() +
-                            ",размер " + ((Tshirt) c).getSize() + ", цена " + ((Tshirt) c).getPrice());
-                }
-                if (c instanceof Pants) {
-                    System.out.println("джинсы: цвет " + ((Pants) c).getColor() +
-                            ",размер " + ((Pants) c).getSize() + ", цена " + ((Pants) c).getPrice());
-                }
-                if (c instanceof Skirt) {
-                    System.out.println("юбка: цвет " + ((Skirt) c).getColor() +
-                            ",размер " + ((Skirt) c).getSize() + ", цена " + ((Skirt) c).getPrice());
-                }
-                if (c instanceof Tie) {
-                    System.out.println("галстук: цвет " + ((Tie) c).getColor() +
-                            ",размер " + ((Tie) c).getSize() + ", цена " + ((Tie) c).getPrice());
-                }
+            if (c instanceof WomenClothes)  {
+                ((WomenClothes) c).dressWomen();
             }
         }
     }

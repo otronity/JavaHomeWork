@@ -8,7 +8,8 @@ public class Tie extends Clothes implements ManClothes{
 
     @Override
     public void dressMan() {
-        System.out.println("Мужская одежда.");
+        System.out.println("галстук: цвет " + this.getColor() +
+                ",размер " + this.getSize() + ", цена " + this.getPrice());
     }
 
 }

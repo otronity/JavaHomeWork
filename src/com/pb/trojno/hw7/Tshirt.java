@@ -8,11 +8,13 @@ public class Tshirt extends Clothes implements ManClothes, WomenClothes {
 
     @Override
     public void dressMan() {
-        System.out.println("Мужская одежда.");
+        System.out.println("футболка: цвет " + this.getColor() +
+                ",размер " + this.getSize() + ", цена " + this.getPrice());
     }
 
     @Override
     public void dressWomen() {
-        System.out.println("Женская одежда.");
+        System.out.println("футболка: цвет " + this.getColor() +
+                ",размер " + this.getSize() + ", цена " + this.getPrice());
     }
 }

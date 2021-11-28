@@ -1,19 +1,25 @@
 package com.pb.trojno.hw10;
 
+import java.net.BindException;
+
 public class NumBox <T extends Number> {
 
     private final T[] numbers;
     int maxelement = 0;
 
-    public NumBox (int size) {
+    public NumBox(int size) {
         numbers = (T[]) new Number[size];
     }
 
-    public void add(T num){
-        if (maxelement < numbers.length) {
-        numbers[maxelement] = num;
-        maxelement ++;}
-        //else {System.out.println("Кол-во єоементов исчерпано");}
+    public void add(T num) throws ArrayIndexOutOfBoundsException {
+        try {
+            numbers[maxelement] = num;
+//            System.out.println("Попытка добавить " + maxelement + " элемент");
+            maxtelement++;
+        } catch (Exception e) {
+            int nexelem = maxelement+1;
+            System.out.println("Попытка добавить " + nextelem + " элемент из " + numbers.length + " возможных");
+        }
     }
 
     public T get(int index){

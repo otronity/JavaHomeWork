@@ -50,15 +50,16 @@ public class Main {
         ));
 
         System.out.println("Начальный список:");
-        System.out.println(phoneList.toString().toString());
+        System.out.println(phoneList.toString());
 
         phoneList.sort(Comparator.comparing(p -> p.birthDate));
         System.out.println("Список после сортировки по Днюю рождения:");
-        System.out.println(phoneList.toString().toString());
+        System.out.println(phoneList.toString());
 
         phoneList.sort(Comparator.comparing(p -> p.fio));
         System.out.println("Список после сортировки по ФИО:");
-        System.out.println(phoneList.toString().toString());
+        System.out.println(phoneList.toString());
+
 
         phoneList.sort(Comparator.comparing(p -> p.phonesnum.get(0)));
         System.out.println("Список после сортировки по первому телефону:");

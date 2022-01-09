@@ -1,13 +1,11 @@
 package com.pb.trojno.hw14;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.Buffer;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -27,18 +25,32 @@ public class Server {
                 System.out.println(Thread.currentThread().getName() + ": Получен запрос от клиента");
 
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
 
-                String headerLine;
+                String input,output;
 
-                    System.out.println("Server reading from channel");
-                    // печатаем заголовки запроса
-                    headerLine = in.readLine();
-                    System.out.println("заголовки запроса: " + headerLine);
+                // цикл ожидания сообщений от клиента
+                System.out.println("Ожидаем сообщений");
+                while ((input = in.readLine()) != null) {
+                    if (input.equalsIgnoreCase("exit"))
+                        break;
 
-                    out.write("Ответ от сервера, текущая дата: ");
-                    System.out.println("Отправляем ответ клиенту");
-                    out.write(LocalDateTime.now().toString() + " " + headerLine);
+                    System.out.println(Thread.currentThread().getName() + ": " + input);
+//                    System.out.println("Отправляем ответ клиенту");
+                    out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-mm-dd HH:mm:ss")).toString() + " " + input);
+
+                }
+
+//                String headerLine;
+
+//                    System.out.println("Server reading from channel");
+//                    // печатаем заголовки запроса
+//                    headerLine = in.readLine();
+//                    System.out.println("заголовки запроса: " + headerLine);
+
+//                    out.write("Ответ от сервера, текущая дата: ");
+//                    System.out.println("Отправляем ответ клиенту");
+//                    out.write(LocalDateTime.now().toString() + " " + headerLine);
 
                 System.out.println("Client disconnected");
 

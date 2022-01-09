@@ -11,6 +11,7 @@ public class CLient {
         int serverPort = 9234;
 
         Socket server = new Socket(serverIp, serverPort);
+
         System.out.println("Клиент стартовал");
         BufferedReader inServer = new BufferedReader(new InputStreamReader(server.getInputStream()));
         PrintWriter outServer = new PrintWriter(server.getOutputStream(), true);

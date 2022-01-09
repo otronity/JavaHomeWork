@@ -35,22 +35,10 @@ public class Server {
                     if (input.equalsIgnoreCase("exit"))
                         break;
 
-                    System.out.println(Thread.currentThread().getName() + ": " + input);
-//                    System.out.println("Отправляем ответ клиенту");
+                    System.out.println(this.name + ": " + input);
                     out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-mm-dd HH:mm:ss")).toString() + " " + input);
 
                 }
-
-//                String headerLine;
-
-//                    System.out.println("Server reading from channel");
-//                    // печатаем заголовки запроса
-//                    headerLine = in.readLine();
-//                    System.out.println("заголовки запроса: " + headerLine);
-
-//                    out.write("Ответ от сервера, текущая дата: ");
-//                    System.out.println("Отправляем ответ клиенту");
-//                    out.write(LocalDateTime.now().toString() + " " + headerLine);
 
                 System.out.println("Client disconnected");
 

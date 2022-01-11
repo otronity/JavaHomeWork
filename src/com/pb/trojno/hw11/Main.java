@@ -8,7 +8,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,8 +64,13 @@ public class Main {
         System.out.println("Список после сортировки по первому телефону:");
         System.out.println(phoneList.toString().toString());
 
-        phoneList.set(0, phoneList.get(0).setFio("Порки Джон"));
-        System.out.println("Список после изменения ФИО первого элемента:");
+
+        for (PhoneBook pb : phoneList) {
+            if (pb.getFio().contains("Соник Петр")) {
+                pb.setFio("Порки Джон");
+            }
+        }
+        System.out.println("Список после изменения ФИО у контакта с именем Соник Петр:");
         System.out.println(phoneList.toString());
 
         phoneList.remove(1);
